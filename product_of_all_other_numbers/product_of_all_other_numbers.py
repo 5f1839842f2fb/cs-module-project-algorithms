@@ -4,9 +4,16 @@ Returns: a List of integers
 '''
 def product_of_all_other_numbers(arr):
     # Your code here
+    arr2 = arr[:]
+    for index, value in enumerate(arr):
+        workingarr = arr[:]
+        workingarr.pop(index)
+        product = 1
+        for j in workingarr:
+            product *= j
+        arr2[index] = product
 
-    pass
-
+    return arr2
 
 if __name__ == '__main__':
     # Use the main function to test your implementation

@@ -2,11 +2,18 @@
 Input: a List of integers as well as an integer `k` representing the size of the sliding window
 Returns: a List of integers
 '''
+
 def sliding_window_max(nums, k):
     # Your code here
+    maxarr = [-9999] * (len(nums) - k + 1) # this will fail if a number less than -9999 is in the input array
+    for i, v in enumerate(maxarr):
+        for n in range(i, i + k):
+            if nums[n] > maxarr[i]:
+                maxarr[i] = nums[n]
+    return maxarr
 
-    pass
 
+arr = [9, 2, 8, 5, 12, 1]
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
